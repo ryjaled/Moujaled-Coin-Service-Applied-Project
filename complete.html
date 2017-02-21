@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="animate.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+
+<script>
+document.getElementById("merchantblock").style.visibility = "hidden";
+</script>
+
+
+</head>
+
+<body background="background.png" onload="startTime()">
+
+
+  <nav style="background-color: #4871ce;">
+   <div style="background-color: #4871ce;" class="nav-wrapper">
+     <a href="index.html" style="color: #ffd800; padding-left: 2%;" class="brand-logo">MTCS</a>
+     <ul id="nav-mobile" style="background-color: #4871ce;" class="right hide-on-med-and-down">
+       <li><a href="http://chipper.netlify.com" style="color: #ffd800">My Wallet</a></li>
+       <li><a href="myaccount.html" style="color: #ffd800">My Account</a></li>
+       <li><a href="faq.html" style="color: #ffd800">FAQ</a></li>
+       <li><a href="user.html" style="color: #ffd800">Ryan Moujaled</a></li>
+
+     </ul>
+   </div>
+ </nav>
+
+
+<!-- content -->
+
+<div style="padding-top:5%">
+  <center>
+    <div style="padding-top: 5%"><img id="logox" src="veri.png" class="circle" width="7%"/></div>
+    <div style="font-weight: bold; font-size:250%; color: #ffd800; padding-top:3%;">VERIFIED!</div>
+    <div style="font-size:150%; color: #ffd800; padding-top:5%;" >Payment Successful.</div>
+    <div style="font-size:150%; color: #ffd800; padding-top:1%;" >MIGHTY BARBERS LTD. needs to confirm your payment.</div>
+    <div style="font-size:150%; color: #ffd800; padding-top:1%;" >Please check your transaction history for more information.</div>
+
+  </center>
+</div>
+
+<!-- end content -->
+
+
+
+
+
+
+<footer>
+    <div>
+      <center style="color: #ffd800; font-weight: normal; padding-top:10%;"><div>Moujaled Tech Coin Service. All rights reserved. 2017</div><div id="txt"></div></center>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="materialize.min.js"></script>
+
+</body>
+
+</html>

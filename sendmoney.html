@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="animate.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+
+<script>
+document.getElementById("merchantblock").style.visibility = "hidden";
+</script>
+
+
+</head>
+
+<body background="background.png" onload="startTime(); Exiter();">
+
+
+  <nav style="background-color: #61B329;">
+   <div style="background-color: #308014;" class="nav-wrapper">
+     <a href="index.html" style="color: white; padding-left: 2%; font-weight: strong;" class="brand-logo">MTCS</a>
+     <ul id="nav-mobile" style="background-color: #308014;" class="right hide-on-med-and-down">
+       <li><a href="dashboard.html" style="color: white">Dashboard</a></li>
+       <li><a href="mywallet.html" style="color: white">My Wallet</a></li>
+       <li><a href="transactionhistory.html" style="color: white">Transaction History</a></li>
+       <li><a href="faq.html" style="color: white">FAQ</a></li>
+       <li><a href="user.html" style="color: white">Ryan Moujaled</a></li>
+
+     </ul>
+   </div>
+ </nav>
+
+
+
+
+
+    <form id='send-money' >
+      <!-- <p>P.S. Your balance won't update if the phone number account you're sending to doesnt exist.</p> -->
+      <center><div class="card-title"> <span style="color: #0d47a1; font-weight: bold; font-size: large; face:capitals">Send Money</span><br></div><center>
+    <input style='color: #0d47a1;' type='text' name='receiver' id='receiver' placeholder='Enter Recipient Phone'/><br>
+    <input style='color: #0d47a1;' type='text' name='amount' id='amount' placeholder='Enter Amount To Send'/><br>
+    <input style='color: #0d47a1;' type='text' name='note' id='note' placeholder='What is this payment for? :D '/><br>
+    <input id='sendbutton' class='submit' type='submit' value='pay'/><br><br>
+
+    </form>
+
+
+    <footer>
+        <div>
+          <center style="color: black; font-weight: normal; padding-top:10%;"><div>Moujaled Tech Coin Service. All rights reserved. 2017</div><div id="txt"></div></center>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
+    <script>
+    document.getElementById("merchantblock").style.visibility = "hidden";
+    </script>
+
+    </body>
+
+    </html>

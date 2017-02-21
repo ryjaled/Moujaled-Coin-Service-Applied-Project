@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="animate.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+
+<script>
+document.getElementById("merchantblock").style.visibility = "hidden";
+</script>
+
+
+
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 150%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+
+
+
+</head>
+
+<body background="" onload="startTime(); getInfo();">
+
+
+
+    <nav style="background-color: #61B329;">
+     <div style="background-color: #308014;" class="nav-wrapper">
+       <a href="index.html" style="color: white; padding-left: 2%; font-weight: strong;" class="brand-logo"><img src="coin.png" height=69></a>
+       <ul id="nav-mobile" style="background-color: #308014;" class="right hide-on-med-and-down">
+         <li><a href="dashboard.html" style="color: white">Dashboard</a></li>
+         <li><a href="mywallet.html" style="color: white">My Wallet</a></li>
+         <li><a href="transactionhistory.html" style="color: white">Transaction History</a></li>
+         <li><a href="faq.html" style="color: white">FAQ</a></li>
+         <li><a href="user.html" style="color: white">Ryan Moujaled</a></li>
+
+       </ul>
+     </div>
+   </nav>
+
+
+
+   <div class="z-depth-2" style="background-color:white; margin-top:3%; margin-right:10%; margin-left:10%" id="usercontent"></div>
+
+
+<!-- <div style="margin-left:10%;margin-right:10%;"> -->
+   <!-- <form id='edit-info' style='margin-top:10%;height:58%;'> -->
+
+     <!-- <center><div class="card-title"> <span style="color: #308014; font-weight: bold; font-size: large; face:capitals">Tell us who you really are!</span><br></div><center><br> -->
+   <!-- <input style='color: #0d47a1; width: 200px; height: 70px' type='textarea' name='about' id='about' placeholder='Say something about yourself...'/><br><br> -->
+<!-- <div style="margin-left:10%;margin-right:10%;"> -->
+<!--  -->
+   <!-- <label for="username" style="color: #308014; font-weight: normal;">Username</label> -->
+   <!-- <div class="input-field col s12"> -->
+      <!-- <input style='color: #0d47a1;' type='text' name='firstname' id='firstname' placeholder='Enter New Firstname'/><br><br> -->
+     <!-- <label for="username" style="color: #308014; font-weight: normal;">Username</label> -->
+   <!-- </div> -->
+   <!-- <input style='color: #0d47a1;' type='text' name='lastname' id='lastname' placeholder='Enter New Lastname'/><br><br> -->
+   <!-- <input style='color: #0d47a1;' type='text' name='username' id='username' placeholder='Enter New Username'/><br><br> -->
+    <!-- <textarea rows="4" cols="50" name="about" id ="about" placeholder="Say something about yourself..." form="edit-info"></textarea><br><br> -->
+   <!-- <input id='editInfo' class='submit' type='submit' value='Update'/><br><br><br> -->
+<!-- </div> -->
+
+   <!-- </form> -->
+   <center>
+     <br><a id='userEditButton' class='waves-effect waves-light btn-large' style="color:yellow; background-color: #308014">Edit User Information</a>
+   </center>
+
+
+   <!-- <div id="myUserModal" class="modal"> -->
+
+     <!-- Modal content -->
+     <!-- <div class="modal-content"> -->
+       <!-- <div class="modal-header" style="background-color: #308014"> -->
+
+       <!-- </div> -->
+       <!-- <div class="modal-body"> -->
+
+       <div style="padding-left: 10%; padding-right: 10%; padding-top: 20%;">
+
+         <center><div><p style="color: #308014; font-weight: bold; font-size: 30px;"><u>Update User Information</u></p></div> </center>
+
+             <div class="row">
+              <div class="input-field col s12">
+                <input id="firstname" type="text" class="" style="color: #308014; font-weight: bold;">
+                <label for="firstname" style="color: #308014; font-weight: normal;">Update First Name</label>
+              </div>
+            </div>
+
+            <div class="row" >
+              <div class="input-field col s12">
+                <input id="lastname" type="text" class="" style="color: #308014; font-weight: bold;">
+                <label for="lastname" style="color: #308014; font-weight: normal;">Update Last Name</label>
+              </div>
+            </div>
+
+            <div class="row" >
+              <div class="input-field col s12">
+                <input id="username" type="text" class="" style="color: #308014; font-weight: bold;">
+                <label for="username" style="color: #308014; font-weight: normal;">Update Username</label>
+              </div>
+            </div>
+
+            <div class="row" >
+              <div class="input-field col s12">
+                <input id="about" type="text" class="" style="color: #308014; font-weight: bold;">
+                <label for="about" style="color: #308014; font-weight: normal;">Update Description</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <center><a onclick="editInfo();" id="userbutton" class="waves-effect waves-light btn-large" style="background-color: #308014; color: white; width:50%">Update</a></center>
+              </div>
+            </div>
+
+
+
+                        <center><img id="logo" src="coin.png" height="200" style="margin-top: 20px;"/>
+
+                          <div class="modal-footer" style="background-color: #308014">
+
+                          </div>
+
+                          <!-- this here leave -->
+                      </div>
+
+                  </div>
+                </div>
+
+
+
+
+</div>
+
+
+           <footer>
+               <div>
+                 <center style="color: black; font-weight: normal; padding-top:10%;"><div>Moujaled Tech Coin Service. All rights reserved. 2017</div><div id="txt"></div></center>
+               </div>
+           </footer>
+
+           <script>
+           // Get the modal
+           var modal = document.getElementById('myUserModal');
+
+           // Get the button that opens the modal
+           var btn = document.getElementById("userEditButton");
+
+           // var reqbtn = document.getElementById("requestbutton");
+
+           // Get the <span> element that closes the modal
+           var span = document.getElementsByClassName("close")[0];
+
+           // When the user clicks the button, open the modal
+           btn.onclick = function() {
+               modal.style.display = "block";
+           }
+
+
+           // When the user clicks anywhere outside of the modal, close it
+           window.onclick = function(event) {
+               if (event.target == modal) {
+                   modal.style.display = "none";
+               }
+           }
+
+
+           </script>
+
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+           <script src="script.js"></script>
+           <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+           <script type="text/javascript" src="materialize.min.js"></script>
+           <script>
+           document.getElementById("merchantblock").style.visibility = "hidden";
+           </script>
+
+           </body>
+
+           </html>

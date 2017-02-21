@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="animate.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 150%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+
+
+
+</head>
+
+<body background="" onload="startTime(); Exiter(); ShowMyTransactions();">
+
+
+
+    <nav style="background-color: #61B329;">
+     <div style="background-color: #308014;" class="nav-wrapper">
+       <a href="index.html" style="color: white; padding-left: 2%; font-weight: strong;" class="brand-logo"><img src="coin.png" height=69></a>
+       <ul id="nav-mobile" style="background-color: #308014;" class="right hide-on-med-and-down">
+         <li><a href="dashboard.html" style="color: white">Dashboard</a></li>
+         <li><a href="mywallet.html" style="color: white">My Wallet</a></li>
+         <li><a href="transactionhistory.html" style="color: white">Transaction History</a></li>
+         <li><a href="faq.html" style="color: white">FAQ</a></li>
+         <li><a href="user.html" style="color: white">Ryan Moujaled</a></li>
+
+       </ul>
+     </div>
+   </nav>
+
+
+
+
+
+        <div style="padding-top: 50px">
+         <!-- <center>  <button id='check'>Click here to refresh after you've been sent money to update your balance if you're still logged in!</button> </center> -->
+         <!-- <center><p>However, when you send money your balance is auto updated for you..</p></center> -->
+       </div>
+     </div>
+       <div id=content></div>
+
+     <div style='margin-top:4%; display: inline;'>
+     <center>
+       <a id='sendbutton' class='waves-effect waves-light btn-large' style="color:yellow; background-color: #308014">Send Money</a>
+       <a id='requestbutton' class='waves-effect waves-light btn-large' style="color:red; background-color: #308014">Request Money</a>
+     </center>
+   </div>
+    <!-- <center><br><a href="requestmoney.html" id='requestbutton' class='waves-effect waves-light btn-large' style="color:white">Pending Transactions</a>  </center> -->
+    <center><div class="z-depth-1" style="color: #308014; font-weight: 900; background-color:white; margin-top:3%; margin-right:5%; margin-left:5%">Pending Transactions
+    <div style="background-color:white; font-weight:normal" id="pendingcontent"></div>
+    </div></center>
+
+
+
+
+    <!-- The Modal -->
+    <div id="mySendModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #308014">
+
+        </div>
+        <div class="modal-body">
+          <center><div><p style="color: #308014; font-weight: bold; font-size: 30px;"><u>Send Money</u></p></div> </center>
+
+          <div class="row">
+           <div class="input-field col s12">
+             <input id="receiver" type="text" class="" style="color: #308014; font-weight: bold;">
+             <label for="receiver" style="color: #308014; font-weight: normal;">Receiver's Phone</label>
+           </div>
+         </div>
+
+         <div class="row" >
+           <div class="input-field col s12">
+             <input id="amount" type="text" class="" style="color: #308014; font-weight: bold;">
+             <label for="amount" style="color: #308014; font-weight: normal;">Amount</label>
+           </div>
+         </div>
+
+         <div class="row" >
+           <div class="input-field col s12">
+             <input id="note" type="text" class="" style="color: #308014; font-weight: bold;">
+             <label for="note" style="color: #308014; font-weight: normal;">Amount description</label>
+           </div>
+         </div>
+
+         <div class="row">
+           <div class="input-field col s12">
+             <center><a onclick="Sender();" id="sendbutton" class="waves-effect waves-light btn-large" style="background-color: #308014; color: white; width:50%">Send</a></center>
+           </div>
+         </div>
+
+
+
+            <center><img id="logo" src="coin.png" height="200" style="margin-top: 20px;"/>
+
+              <div class="modal-footer" style="background-color: #308014">
+
+              </div>
+
+          </div>
+
+      </div>
+    </div>
+
+    <div id="myRequestModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #308014">
+
+        </div>
+        <div class="modal-body">
+          <center><div><p style="color: #308014; font-weight: bold; font-size: 30px;"><u>Request Money</u></p></div> </center>
+          <!-- <form id='request-money'>
+            <p>P.S. Your balance won't update if the phone number account you're sending to doesnt exist.</p> -->
+          <!-- <input style='color: #0d47a1;' type='text' name='receiver' id='Rreceiver' placeholder='Enter Recipient Phone'/><br> -->
+          <!-- <input style='color: #0d47a1;' type='text' name='amount' id='Ramount' placeholder='Enter Amount To Request'/><br> -->
+          <!-- <input style='color: #0d47a1;' type='text' name='note' id='Rnote' placeholder='What is this request for?'/><br> -->
+          <!-- <center><input id='requestbutton' class='submit waves-effect waves-light btn-large' style="background-color: #308014; color: white; width:20%" type='submit' value='request'/></center> -->
+          <!-- </form> -->
+
+
+
+          <div class="row">
+           <div class="input-field col s12">
+             <input id="Rreceiver" type="text" class="" style="color: #308014; font-weight: bold;">
+             <label for="Rreceiver" style="color: #308014; font-weight: normal;">Receiver's Phone</label>
+           </div>
+         </div>
+
+         <div class="row" >
+           <div class="input-field col s12">
+             <input id="Ramount" type="text" class="" style="color: #308014; font-weight: bold;">
+             <label for="Ramount" style="color: #308014; font-weight: normal;">Amount</label>
+           </div>
+         </div>
+
+         <div class="row" >
+           <div class="input-field col s12">
+             <input id="Rnote" type="text" class="" style="color: #308014; font-weight: bold;">
+             <label for="Rnote" style="color: #308014; font-weight: normal;">Amount description</label>
+           </div>
+         </div>
+
+         <div class="row">
+           <div class="input-field col s12">
+             <center><a onclick="Requester();" id="requestbutton" class="waves-effect waves-light btn-large" style="background-color: #308014; color: white; width:50%">Request</a></center>
+           </div>
+         </div>
+
+
+          <center><img id="logo" src="coin.png" height="200" style="margin-top: 20px;"/>
+
+        </div>
+
+        <div class="modal-footer" style="background-color: #308014">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+<footer>
+    <div>
+      <center style="color: black; font-weight: normal; padding-top:10%;"><div>Moujaled Tech Coin Service. All rights reserved. 2017</div><div id="txt"></div></center>
+    </div>
+</footer>
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('mySendModal');
+var reqmodal = document.getElementById('myRequestModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("sendbutton");
+var reqbtn = document.getElementById("requestbutton");
+// var reqbtn = document.getElementById("requestbutton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+reqbtn.onclick = function() {
+    reqmodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
+//
+// reqspan.onclick = function() {
+//     reqmodal.style.display = "none";
+// }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    if (event.target == reqmodal) {
+        reqmodal.style.display = "none";
+    }
+}
+
+
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="materialize.min.js"></script>
+
+<script>
+// document.getElementById("merchantblock").style.visibility = "hidden";
+</script>
+
+</body>
+
+</html>
