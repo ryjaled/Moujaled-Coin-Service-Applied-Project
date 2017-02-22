@@ -11,11 +11,42 @@
     <script src="app.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="animate.css">
+    <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link type="text/css" rel="stylesheet" href="materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
   </head>
   <body>
     <img alt="avatar" id="avatar" style="display:none;">
-    <p>Welcome <span id="nickname"></span></p>
-    <button type="submit" id="btn-login">Sign In</button>
+    <div style="padding-top:15%;">
+    <center><p style="font-weight:bold;font-size:large;" >Welcome <span id="nickname"></span></p></center>
+    <!-- <center><img id="logo" src="coin.png" height="200" style="margin-top: 20px;"/> -->
+    <center><button type="submit" id="btn-login" class='waves-effect waves-light btn-large' style="color:white; background-color: #308014; width: 250px; margin-top:5%; " >Sign In</button></center>
+    <!-- <center><button type="submit" id="btn-login" class='waves-effect waves-light btn-large' style="color:white; background-color: #308014; padding-top:5%; width: 250px;">Sign In</button></center> -->
+    </div>
     <button type="submit" id="btn-logout" style="display:none;">Sign Out</button>
+
+
+
+
+    <footer>
+        <div>
+          <center style="color: #308014; font-weight: normal; padding-top: 20%;"><div>Moujaled Tech Coin Service. All rights reserved. 2017</div><div id="txt"></div></center>
+        </div>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+    <script type="text/javascript" src="materialize.min.js"></script>
+
   </body>
+
 </html>
